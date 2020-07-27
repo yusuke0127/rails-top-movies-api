@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+
+path ='./movies.json'
+movies = JSON.parse(File.read(path))
+movies
+
+movies.each do |movie|
+  m = Movie.create!(
+    title: movie['title'],
+    cast: movie['cast'],
+    director: movie['director'],
+    storyline: movie['storyline'],
+    year: movie['year'],
+    genre: movie['genre'],
+    rating: movie['rating']
+  )
+  p movie
+  puts "Done creating #{m.title}"
+end
+
+puts "Done seeding"
