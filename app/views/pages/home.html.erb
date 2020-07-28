@@ -7,16 +7,23 @@
   </div>
   <h2>Usage</h2>
   <div class="usage">
-    <h2>Retrieve all movies</h2>
-    <p>Request URL: #URL</p>
+    <h3>Retrieve all movies</h3>
+    <p>Request URL: <em>https://top-250-movies-api.herokuapp.com/api/v1/movies</em></p>
   </div>
   <div class="usage">
-    <h2>Retrieve a specific movie</h2>
-    <p>Request URL: #URL</p>
+    <h3>Retrieve a specific movie</h3>
+    <p>Request URL: <em>https://top-250-movies-api.herokuapp.com/api/v1/movies/#ID</em></p>
+    <p>Sample Usage: <em>https://top-250-movies-api.herokuapp.com/api/v1/movies/1</em></p>
   </div>
   <div class="usage">
-    <h2>Retrieve a movie or movies using keywords()</h2>
-    <p>Request URL: #URL</p>
+    <h3>Retrieve a movie or movies using keywords(Movie title, Director, Actor's name, Year of release and Genre)</h3>
+    <p>Request URL: <em>https://top-250-movies-api.herokuapp.com/api/v1/search?query=#KEYWORD</em></p>
+    <p>Sample Usages: <br>
+      <em>https://top-250-movies-api.herokuapp.com/api/v1/search?query=inception</em></p>
+    <p><em>https://top-250-movies-api.herokuapp.com/api/v1/search?query=nolan</em></p>
+    <p><em>https://top-250-movies-api.herokuapp.com/api/v1/search?query=bale</em></p>
+    <p><em>https://top-250-movies-api.herokuapp.com/api/v1/search?query=2009</em></p>
+    <p><em>https://top-250-movies-api.herokuapp.com/api/v1/search?query=drama</em></p>
   </div>
   <form>
     <div class="form-row align-items-center">
@@ -25,7 +32,7 @@
         <input type="text" class="form-control" id="inlineFormInputName" placeholder="Jane Doe">
       </div>
       <div class="col-sm-1 my-1">
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="btn btn-primary" id="api-button">Search</button>
       </div>
     </div>
   </form>
