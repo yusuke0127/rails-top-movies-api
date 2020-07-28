@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="header">
+    <h1>Top movies API</h1>
+  </div>
+  <div class="description">
+    <p>A simple API that can return basic information about the top 250 movies listed in IMDb. Data is scraped from <%= link_to "IMDb", "https://www.imdb.com/chart/top" %>.</p>
+  </div>
+  <h2>Usage</h2>
+  <div class="usage">
+    <h2>Retrieve all movies</h2>
+    <p>Request URL: #URL</p>
+  </div>
+  <div class="usage">
+    <h2>Retrieve a specific movie</h2>
+    <p>Request URL: #URL</p>
+  </div>
+  <div class="usage">
+    <h2>Retrieve a movie or movies using keywords()</h2>
+    <p>Request URL: #URL</p>
+  </div>
+  <form>
+    <div class="form-row align-items-center">
+      <div class="col-sm-11 my-1">
+        <label class="sr-only" for="inlineFormInputName">URL</label>
+        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Jane Doe">
+      </div>
+      <div class="col-sm-1 my-1">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
