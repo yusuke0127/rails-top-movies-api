@@ -10,8 +10,10 @@ class Api::V1::MoviesController < Api::V1::BaseController
     render json: @movie
   end
 
-  def title
-
+  # query director, movie title, rating and year
+  def search
+    @movies = Movie.search_by_query(params[:query])
+    render json: @movies
   end
 
   private
