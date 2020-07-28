@@ -10,6 +10,10 @@ class Api::V1::MoviesController < Api::V1::BaseController
     render json: @movie
   end
 
+  def title
+
+  end
+
   private
 
   def set_movie
