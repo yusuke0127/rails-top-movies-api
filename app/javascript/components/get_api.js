@@ -7,12 +7,13 @@ const getApi = () => {
   }
   getApiBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(queryApi.value);
+    displayApi.innerHTML = "Fetching API..."
     fetch(queryApi.value, {mode: 'no-cors'})
       .then(data => data.json())
       .then(data => {
         displayApi.innerHTML = "<pre class='h-100'>" + JSON.stringify(data, undefined, 2) + "</pre>";
       });
+      // displayApi.focus();
   });
 }
 
