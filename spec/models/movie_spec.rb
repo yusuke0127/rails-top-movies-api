@@ -1,55 +1,41 @@
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
+
+  it "has a valid factory" do
+    expect(FactoryBot.build(:movie)).to be_valid
+  end
+
   it "is invalid without a title" do
-    movie = Movie.new(title: nil)
+    movie = FactoryBot.build(:movie, title: nil)
     expect(movie).to be_invalid
   end
 
   it "does not allow duplicate titles" do
-    movie = Movie.create(
-      title: "Test",
-      director: "Test",
-      rating: 5
-    )
-    new_movie = Movie.new(
-      title: "Test",
-      director: "Test",
-      rating: 5
-    )
+    movie = FactoryBot.create(:movie)
+    new_movie = FactoryBot.build(:movie)
     new_movie.valid?
     expect(new_movie.errors[:title]).to include("has already been taken")
   end
 
   it "is invalid without a director" do
-    movie = Movie.new(title: "Test title", director: nil)
+    movie = FactoryBot.build(:movie, director: nil)
     expect(movie).to be_invalid
   end
 
   it "is invalid without a rating" do
-    movie = Movie.new(
-      title: "Test title",
-      director: "Test",
-      rating: nil
-    )
+    movie = FactoryBot.build(:movie, rating: nil)
     expect(movie).to be_invalid
   end
+
   it "returns rating as a float" do
-    movie = Movie.new(
-      title: "Test title",
-      director: "Test",
-      rating: 5.5
-    )
-    expect(movie.rating).to eq(5.5)
+    movie = FactoryBot.build(:movie)
+
+    expect(movie.rating).to eq(5.0)
   end
 
   it "returns year as a string" do
-    movie = Movie.new(
-      title: "Test title",
-      director: "Test",
-      rating: 5,
-      year: "2020"
-    )
+    movie = FactoryBot.build(:movie)
     expect(movie.year).to eq("2020")
   end
 
